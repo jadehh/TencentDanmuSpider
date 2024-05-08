@@ -103,9 +103,9 @@ def trans_CN(text):  # ! 中文分词
 
 
 def wordCloud(file):  # ! 生成词云
-    f = open(file, 'r', encoding='utf-8')
-    text = f.read()
-    f.close
+    with open(file, 'r', encoding='utf-8') as f:
+        text = f.read()
+        f.close
     text = trans_CN(text)
     stopwords = set()
     content = [line.strip() for line in open('stopwords.txt', 'r', encoding='utf-8').readlines()]
@@ -131,9 +131,9 @@ def wordCloud(file):  # ! 生成词云
 
 
 def wordCloud0(file):  # ! 生成词云
-    f = open(file, 'r', encoding='utf-8')
-    text = f.read()
-    f.close
+    with open(file, 'r', encoding='utf-8') as f:
+        text = f.read()
+        f.close
     return text
 
 
